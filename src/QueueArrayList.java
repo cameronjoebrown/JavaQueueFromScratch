@@ -8,4 +8,21 @@ public class QueueArrayList<T> {
     this.queue = new ArrayList<>();
   }
 
+  public void add(T item) {
+    // TODO: Implement
+  }
+
+  public void remove() {
+    // TODO: Implement
+  }
+
+  public T peek() {
+    // TODO: Implement
+    return null;
+  }
+
+  public boolean isEmpty() {
+    // TODO: Implement
+    return true;
+  }
 }
