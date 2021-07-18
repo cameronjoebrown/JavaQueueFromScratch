@@ -1,20 +1,35 @@
 /**
  * The QueueArray class uses Java's primitive array data type
  * to implement a Queue data structure.
+ *
+ * @author Cameron Brown
  */
 public class QueueArray {
-  private int front, back, queueSize;
+  /** The index of the item at the front of the queue */
+  private int front;
+
+  /** The index of the item at the back of the queue */
+  private int back;
+
+  /** The max amount of items that can fit in the queue since the size of
+   *  Java's primitive array cannot be changed after initialization */
+  private final int capacity;
+
+  /** The amount of items that are currently in the queue */
+  private int queueSize;
+
+  /** The actual queue stored using Java's primitive array type */
   private Object[] queue;
 
-  QueueArray(int queueSize) {
+  QueueArray(int capacity) {
     this.front = 0;
     this.back = 0;
-    this.queueSize = queueSize;
-    this.queue = new Object[queueSize];
+    this.capacity=capacity;
+    this.queue = new Object[capacity];
   }
 
   public void add(Object item) {
-    if(this.back == this.queueSize) {
+    if(this.back == this.capacity) {
       System.out.println("Queue is full. No more items can be added.");
     }
     else {
@@ -33,8 +48,7 @@ public class QueueArray {
   }
 
   public Object peek() {
-    // TODO: Implement
-    return null;
+    return queue[front];
   }
 
   public boolean isEmpty() {
